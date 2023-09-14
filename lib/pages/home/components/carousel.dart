@@ -7,6 +7,7 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 
 class Carousel extends StatelessWidget {
   final CarouselController carouselController = CarouselController();
+
   @override
   Widget build(BuildContext context) {
     double carouselContainerHeight = MediaQuery.of(context).size.height *
@@ -68,20 +69,12 @@ class Carousel extends StatelessWidget {
 // Big screens
 Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
   return Center(
-    child: ResponsiveWrapper(
-      maxWidth: kDesktopMaxWidth,
-      minWidth: kDesktopMaxWidth,
-      defaultScale: false,
-      child: Row(
-        children: [
-          Expanded(
-            child: text,
-          ),
-          Expanded(
-            child: image,
-          )
-        ],
-      ),
+    child: ResponsiveRowColumn(
+      layout: ResponsiveRowColumnType.ROW,
+      children: [
+        ResponsiveRowColumnItem(child: text),
+        ResponsiveRowColumnItem(child: image)
+      ],
     ),
   );
 }
@@ -89,20 +82,12 @@ Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
 // Mid screens
 Widget _buildTablet(BuildContext context, Widget text, Widget image) {
   return Center(
-    child: ResponsiveWrapper(
-      maxWidth: kTabletMaxWidth,
-      minWidth: kTabletMaxWidth,
-      defaultScale: false,
-      child: Row(
-        children: [
-          Expanded(
-            child: text,
-          ),
-          Expanded(
-            child: image,
-          )
-        ],
-      ),
+    child: ResponsiveRowColumn(
+      layout: ResponsiveRowColumnType.ROW,
+      children: [
+        ResponsiveRowColumnItem(child: text),
+        ResponsiveRowColumnItem(child: image)
+      ],
     ),
   );
 }

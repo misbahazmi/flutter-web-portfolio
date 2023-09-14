@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/header_item.dart';
@@ -65,10 +65,10 @@ class HeaderRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveVisibility(
-      visible: false,
-      visibleWhen: [
-        Condition.largerThan(name: MOBILE),
-      ],
+      visible: true,
+      // visibleConditions: [
+      //   Condition.largerThan(value: MOBILE)
+      // ],
       child: Row(
         children: headerItems
             .map(
@@ -149,10 +149,10 @@ class Header extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 // Lets open drawer using global key
-                Globals.scaffoldKey.currentState.openEndDrawer();
+                Globals.scaffoldKey.currentState?.openEndDrawer();
               },
-              child: Icon(
-                FlutterIcons.menu_fea,
+              child: FaIcon(
+                FontAwesomeIcons.burger,
                 color: Colors.white,
                 size: 28.0,
               ),

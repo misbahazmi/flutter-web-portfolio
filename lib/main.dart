@@ -22,19 +22,14 @@ class MyApp extends StatelessWidget {
         canvasColor: kBackgroundColor,
         textTheme: GoogleFonts.latoTextTheme(),
       ),
-      builder: (context, widget) => ResponsiveWrapper.builder(
-        ClampingScrollWrapper.builder(context, widget),
-        defaultScale: true,
+      builder: (context, widget) => ResponsiveBreakpoints.builder(
+        child: widget!,
         breakpoints: [
-          ResponsiveBreakpoint.resize(450, name: MOBILE),
-          ResponsiveBreakpoint.resize(800, name: TABLET),
-          ResponsiveBreakpoint.resize(1000, name: TABLET),
-          ResponsiveBreakpoint.resize(1200, name: DESKTOP),
-          ResponsiveBreakpoint.resize(2460, name: "4K"),
+          const Breakpoint(start: 0, end: 450, name: MOBILE),
+          const Breakpoint(start: 451, end: 800, name: TABLET),
+          const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+          const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
         ],
-        background: Container(
-          color: kBackgroundColor,
-        ),
       ),
       home: Home(),
     );

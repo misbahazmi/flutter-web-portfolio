@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ScreenHelper extends StatelessWidget {
-  final Widget mobile;
-  final Widget tablet;
-  final Widget desktop;
+  final Widget? mobile;
+  final Widget? tablet;
+  final Widget? desktop;
 
-  ScreenHelper({Key key, this.desktop, this.mobile, this.tablet})
-      : super(key: key);
+  ScreenHelper({Key? key, this.desktop, this.mobile, this.tablet}) : super(key: key);
 
   static bool isMobile(BuildContext context) =>
       MediaQuery.of(context).size.width < 800.0;
@@ -23,12 +22,12 @@ class ScreenHelper extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         if (constraints.maxWidth >= 1200.0) {
-          return desktop;
+          return desktop!;
         } else if (constraints.maxWidth >= 800 &&
             constraints.maxWidth < 1200.0) {
-          return tablet;
+          return tablet!;
         } else {
-          return mobile;
+          return mobile!;
         }
       },
     );

@@ -14,7 +14,7 @@ List<CarouselItemModel> carouselItems = List.generate(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "PRODUCT DESIGNER",
+            "ANDROID ENGINEER (Android|Java|Flutter)",
             style: GoogleFonts.oswald(
               color: kPrimaryColor,
               fontWeight: FontWeight.w900,
@@ -25,7 +25,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             height: 18.0,
           ),
           Text(
-            "MICHELE\nHARRINGTON",
+            "MOHAMMAD\nMISBAH",
             style: GoogleFonts.oswald(
               color: Colors.white,
               fontSize: 40.0,
@@ -37,7 +37,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             height: 10.0,
           ),
           Text(
-            "Full-stack developer, based in Barcelona",
+            "Mobile application developer, based in Dubai, UAE",
             style: TextStyle(
               color: kCaptionColor,
               fontSize: 15.0,
@@ -51,7 +51,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             child: Wrap(
               children: [
                 Text(
-                  "Need a full custom website?",
+                  "Need a full custom app?",
                   style: TextStyle(
                     color: kCaptionColor,
                     fontSize: 15.0,
